@@ -1,3 +1,42 @@
+
+tasks = []
+
+def add_task():
+    task = input("Enter a new task: ")
+    tasks.append(task)
+    print("Task added succesfully.")
+    
+def view_tasks():
+    if len(tasks) == 0:
+        print("no tasks.")
+    else:
+        print("List of tasks: ")
+        for i, task in enumerate(tasks):
+            print(f"{i+1}.{task}")
+            
+def delete_task():
+    if len(tasks) == 0:
+        print("no tasks to delete")
+        
+    else:
+        print("Tasks: ")
+        for i, task in enumerate(tasks):
+            print(f"{i+1}.{task}")
+            choice = int(input)("Enter the task number to delete: ")
+            
+            if 0 < choice <= len(tasks):
+                del tasks[choice-1]
+                print("Task deleted succesfully.")
+            else:
+                print("Invalid task number.")
+        
+    
+
+
+
+
+
+
 def main():
     while True:
         print("\n -------------- ToDo App -------------- ")
